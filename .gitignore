@@ -11,6 +11,7 @@ roadapikey.txt
 chromedriver.exe
 station_data/
 지역별/
+gov_data_api_key.txt
 
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
