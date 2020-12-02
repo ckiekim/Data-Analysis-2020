@@ -43,13 +43,13 @@ def get_ID(dfarg):
         
             # 광역시가 아니면서 구를 가지고 있는 시 처리 
             for keys, values in tmp_gu_dict.items():
-                if len(dfarg['시군구'][n]) >= 5 and dfarg['시군구'][n].strip()[:2] in keys:
-                    if len(dfarg['시군구'][n].split()[1]) == 2:
-                        si_name[n] = keys + ' ' + dfarg['시군구'][n].split()[1]
+                if dfarg['시군구'][n].strip() in values:
+                    if len(dfarg['시군구'][n]) == 2:
+                        si_name[n] = keys + ' ' + dfarg['시군구'][n]
                     elif dfarg['시군구'][n] in ['마산합포구','마산회원구']:
-                        si_name[n] = keys + ' ' + dfarg['시군구'][n].strip()[2:-1]
+                        si_name[n] = keys + ' ' + dfarg['시군구'][n][2:-1]
                     else:
-                        si_name[n] = keys + ' ' + dfarg['시군구'][n].strip()[4:-1]
+                        si_name[n] = keys + ' ' + dfarg['시군구'][n][:-1]
         
         elif dfarg['광역시도'][n] == '세종특별자치시':  # 세종자치시의 경우는 세종으로
             si_name[n] = '세종'
